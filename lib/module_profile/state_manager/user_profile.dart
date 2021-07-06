@@ -11,9 +11,9 @@ class UserProfileStateManager {
   void getProfile(){
      _service.getMyProfile().then((value) {
         if(value!= null){
-        stateSubject.sink.add(UserProfileState({},UserProfileStatus.SUCCESS));
+        stateSubject.sink.add(UserProfileState(value,UserProfileStatus.INIT));
         }else{
-          stateSubject.sink.add(UserProfileState({},UserProfileStatus.ERROR));
+          stateSubject.sink.add(UserProfileState(null,UserProfileStatus.ERROR));
         }
       });
     }

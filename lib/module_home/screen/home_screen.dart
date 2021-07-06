@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tut/module_antomy/screen/veiw_screen.dart';
+import 'package:tut/module_education/education_routes.dart';
+import 'package:tut/module_education/screen/education_screen.dart';
 import 'package:tut/module_settings/setting_routes.dart';
 import 'package:tut/utils/back_ground/background.dart';
 import 'package:tut/utils/size_configration/size_config.dart';
@@ -70,7 +72,11 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  _buildButton(text: 'Educational'),
+                  _buildButton(text: 'Educational',
+                  onClick: (){
+                    Navigator.of(context).pushNamed(EducationRoutes.EDUCATION_SCREEN);
+                  }
+                  ),
                   _buildButton(text: 'Curative')
                 ],
               ),

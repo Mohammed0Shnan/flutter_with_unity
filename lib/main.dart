@@ -4,9 +4,12 @@ import 'package:tut/module_auth/bloc/login_bloc/login_bloc.dart';
 import 'package:tut/module_auth/bloc/register_bloc/register_bloc.dart';
 import 'package:tut/module_auth/ui/screen/login_screen/login_screen.dart';
 import 'package:tut/module_auth/ui/screen/register_screen/register_screen.dart';
+import 'package:tut/module_education/bloc/education_level_bloc.dart';
+import 'package:tut/module_education/education_module.dart';
+import 'package:tut/module_education/screen/education_screen.dart';
+import 'package:tut/module_education/widgets/education_level_step_card.dart';
 import 'package:tut/module_home/home_module.dart';
 import 'package:tut/module_home/screen/home_screen.dart';
-import 'package:tut/module_profile/model/profile_model.dart';
 import 'package:tut/module_profile/module_profile.dart';
 import 'package:tut/module_profile/state_manager/edit_profile.dart';
 import 'package:tut/module_profile/state_manager/user_profile.dart';
@@ -30,7 +33,9 @@ void main() {
       HomeModule(_homeScreen),
       AuthorizationModule(_loginScreen, _registerScreen),
       SettingsModule(SettingsScreen()),
-      ProfileModule(EditProfileScreen(EditProfileStateManager()), UserProfileScreen(UserProfileStateManager()))));
+      ProfileModule(EditProfileScreen(EditProfileStateManager()), UserProfileScreen(UserProfileStateManager())),
+      EducationModule(EducationScreen(EducationLevelBloc()),EducationLevelStepCard())
+      ));
 }
 
 class MyApp extends StatefulWidget {
@@ -46,8 +51,9 @@ class MyApp extends StatefulWidget {
 
   final SettingsModule _settingsModule;
   final ProfileModule _profileModule;
+  final EducationModule _educationModule;
   MyApp(this._wapperModule, this._homeModule, this._authorizationModule,
-      this._settingsModule, this._profileModule);
+      this._settingsModule, this._profileModule,this._educationModule);
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -62,6 +68,7 @@ class _MyAppState extends State<MyApp> {
     routes.addAll(widget._authorizationModule.getRoutes());
     routes.addAll(widget._settingsModule.getRoutes());
     routes.addAll(widget._profileModule.getRoutes());
+    routes.addAll(widget._educationModule.getRoutes());
     return configuratedApp(routes);
   }
 

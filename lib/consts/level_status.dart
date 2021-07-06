@@ -1,0 +1,1 @@
+enum LevelStatus {DONE , LOCK , CURRENT }

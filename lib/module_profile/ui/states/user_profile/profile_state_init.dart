@@ -6,10 +6,10 @@ import 'package:tut/module_profile/profile_routes.dart';
 import 'package:tut/utils/size_configration/size_config.dart';
 
 class ProfileStateInit extends StatelessWidget {
-  final Function(ProfileModel) onSaveRequest;
+  
   final Function(String) onImageChange;
   final ProfileModel profileModel ;
-  ProfileStateInit({this.onSaveRequest,this.profileModel,this.onImageChange});
+  ProfileStateInit({this.profileModel,this.onImageChange});
   @override
   Widget build(BuildContext context) {
    return Scaffold(
