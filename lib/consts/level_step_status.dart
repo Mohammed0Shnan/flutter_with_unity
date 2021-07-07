@@ -1,0 +1,1 @@
+enum EnumLevelStepStatus {OPEN ,NOT_OPEN}

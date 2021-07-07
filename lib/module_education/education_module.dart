@@ -1,4 +1,3 @@
-import 'dart:js';
 
 import 'package:flutter/cupertino.dart';
 import 'package:tut/abstracts/module/my_module.dart';

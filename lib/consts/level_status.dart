@@ -1,1 +1,1 @@
-enum LevelStatus {DONE , LOCK , CURRENT }
+enum EnumLevelStatus {DONE , LOCK , CURRENT }

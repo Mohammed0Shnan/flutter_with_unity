@@ -9,12 +9,10 @@ EducationLevelStepsStateLoaded({this.levels});
   Widget build(BuildContext context) {
         return Container(
       margin: EdgeInsets.symmetric(horizontal: 25),
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: levels.length,
-        itemBuilder: (context,index){
-          return  EducationLevelStepCard(text: levels[index].levelNname,isLock: true,);
-        }),
+      child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3,),
+         itemBuilder: (context , index){
+           return EducationLevelStepCard(text: levels[index].levelNname,isLock: true,);
+         })
     );
   }
 }

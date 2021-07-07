@@ -4,14 +4,14 @@ import 'package:tut/module_education/education_routes.dart';
 
 class EducationLevelCard extends StatelessWidget {
   final String text;
-  final LevelStatus state;
+  final EnumLevelStatus state;
   EducationLevelCard({this.text, this.state});
   @override
   Widget build(BuildContext context) {
     IconData icon;
-    if (state == LevelStatus.DONE)
+    if (state == EnumLevelStatus.DONE)
       icon = Icons.check;
-    else if (state == LevelStatus.LOCK)
+    else if (state == EnumLevelStatus.LOCK)
       icon = Icons.lock;
     else {
       icon = Icons.memory_rounded;
